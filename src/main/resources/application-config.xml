@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="mercedesFactory" class="com.gmail.maxsvynarchuk.xml.industry.factory.VehicleFactory">
+        <lookup-method name="getCrossover" bean="mercedesGLSClass"/>
+        <lookup-method name="getPickupTrack" bean="mercedesXClass"/>
+        <lookup-method name="getSedan" bean="mercedesCClass"/>
+        <lookup-method name="getTrailerTrack" bean="mercedesActros"/>
+        <lookup-method name="getSportCar" bean="mercedesAMG"/>
+    </bean>
+    <bean id="teslaFactory" class="com.gmail.maxsvynarchuk.xml.industry.factory.VehicleFactory">
+        <lookup-method name="getCrossover" bean="mercedesGLSClass"/>
+        <lookup-method name="getPickupTrack" bean="mercedesXClass"/>
+        <lookup-method name="getSedan" bean="mercedesCClass"/>
+        <lookup-method name="getTrailerTrack" bean="mercedesActros"/>
+        <lookup-method name="getSportCar" bean="mercedesAMG"/>
+    </bean>
+
+    <bean id="mercedesActros" class="com.gmail.maxsvynarchuk.xml.industry.vehicle.mercedes.MercedesActros" scope="prototype"/>
+    <bean id="mercedesAMG" class="com.gmail.maxsvynarchuk.xml.industry.vehicle.mercedes.MercedesAMG" scope="prototype"/>
+    <bean id="mercedesCClass" class="com.gmail.maxsvynarchuk.xml.industry.vehicle.mercedes.MercedesCClass" scope="prototype"/>
+    <bean id="mercedesGLSClass" class="com.gmail.maxsvynarchuk.xml.industry.vehicle.mercedes.MercedesGLSClass" scope="prototype"/>
+    <bean id="mercedesXClass" class="com.gmail.maxsvynarchuk.xml.industry.vehicle.mercedes.MercedesXClass" scope="prototype"/>
+
+    <bean id="modelS" class="com.gmail.maxsvynarchuk.xml.industry.vehicle.tesla.ModelS" scope="prototype"/>
+    <bean id="modelX" class="com.gmail.maxsvynarchuk.xml.industry.vehicle.tesla.ModelX" scope="prototype"/>
+    <bean id="teslaSemi" class="com.gmail.maxsvynarchuk.xml.industry.vehicle.tesla.TeslaSemi" scope="prototype"/>
+    <bean id="roadster" class="com.gmail.maxsvynarchuk.xml.industry.vehicle.tesla.Roadster" scope="prototype"/>
+    <bean id="teslaCybertruck" class="com.gmail.maxsvynarchuk.xml.industry.vehicle.tesla.TeslaCybertruck" scope="prototype"/>
+
+</beans>
